@@ -1,6 +1,6 @@
-package br.com.fiap.tech_challenge_ii.core.domain.entities.restaurant;
+package br.com.fiap.tech_challenge_ii.restaurant.core.domain;
 
-public enum KitchenTypeEnum {
+public enum KitchenType {
     ITALIAN,
     JAPANESE,
     BRAZILIAN,
