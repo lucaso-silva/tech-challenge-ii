@@ -2,7 +2,7 @@ package br.com.fiap.tech_challenge_ii.user.core.domain;
 
 import java.time.LocalDateTime;
 
-import br.com.fiap.tech_challenge_ii.core.domain.valueObjects.Address;
+import br.com.fiap.tech_challenge_ii.user.core.domain.valueObjects.Address;
 import lombok.Getter;
 
 @Getter

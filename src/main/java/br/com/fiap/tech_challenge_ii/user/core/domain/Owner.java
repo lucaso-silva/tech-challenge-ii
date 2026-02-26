@@ -3,7 +3,7 @@ package br.com.fiap.tech_challenge_ii.user.core.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import br.com.fiap.tech_challenge_ii.core.domain.valueObjects.Address;
+import br.com.fiap.tech_challenge_ii.user.core.domain.valueObjects.Address;
 import br.com.fiap.tech_challenge_ii.restaurant.core.domain.Restaurant;
 
 public class Owner extends User {
