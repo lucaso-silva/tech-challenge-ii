@@ -69,7 +69,8 @@ direction TB
     User "1" --> "1" Address
     Owner "1" --> "1..*" Restaurant
     Restaurant "1" --> "1" Address
-    Restaurant --> "1..*" MenuItem```
+    Restaurant --> "1..*" MenuItem
+```
 
 #### Diagrama de entidades
 
