@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserEntity {
+public class RestaurantUserEntity {
     @Id
     Long id;
     @Column(name = "user_type", nullable = false)
