@@ -3,12 +3,12 @@ package br.com.fiap.tech_challenge_ii.menu.infra.gateway.db.mapper;
 import org.springframework.stereotype.Component;
 
 import br.com.fiap.tech_challenge_ii.menu.core.domain.valueObjects.User;
-import br.com.fiap.tech_challenge_ii.menu.infra.gateway.db.entity.UserEntity;
+import br.com.fiap.tech_challenge_ii.menu.infra.gateway.db.entity.MenuUserEntity;
 
 @Component
 public class UserMapper {
 
-    public User toDomain(UserEntity userEntity) {
+    public User toDomain(MenuUserEntity userEntity) {
         if (userEntity == null) {
             return null;
         }

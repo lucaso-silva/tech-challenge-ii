@@ -3,12 +3,12 @@ package br.com.fiap.tech_challenge_ii.menu.infra.gateway.db.mapper;
 import org.springframework.stereotype.Component;
 
 import br.com.fiap.tech_challenge_ii.menu.core.domain.valueObjects.Restaurant;
-import br.com.fiap.tech_challenge_ii.menu.infra.gateway.db.entity.RestaurantEntity;
+import br.com.fiap.tech_challenge_ii.menu.infra.gateway.db.entity.MenuRestaurantEntity;
 
 @Component
 public class RestaurantMapper {
 
-    public Restaurant toDomain(RestaurantEntity entity) {
+    public Restaurant toDomain(MenuRestaurantEntity entity) {
         if (entity == null) {
             return null;
         }
@@ -18,11 +18,11 @@ public class RestaurantMapper {
                 entity.getOwnerId());
     }
 
-    public RestaurantEntity toEntity(Restaurant domain) {
+    public MenuRestaurantEntity toEntity(Restaurant domain) {
         if (domain == null) {
             return null;
         }
-        RestaurantEntity entity = new RestaurantEntity();
+        MenuRestaurantEntity entity = new MenuRestaurantEntity();
         if (domain.getId() != null) {
             entity.setId(domain.getId());
         }
