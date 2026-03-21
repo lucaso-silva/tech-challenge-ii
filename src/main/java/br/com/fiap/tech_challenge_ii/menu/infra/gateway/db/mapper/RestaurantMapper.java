@@ -18,17 +18,4 @@ public class RestaurantMapper {
                 entity.getOwnerId());
     }
 
-    public MenuRestaurantEntity toEntity(Restaurant domain) {
-        if (domain == null) {
-            return null;
-        }
-        MenuRestaurantEntity entity = new MenuRestaurantEntity();
-        if (domain.getId() != null) {
-            entity.setId(domain.getId());
-        }
-        entity.setName(domain.getName());
-        entity.setOwnerId(domain.getOwnerId());
-        return entity;
-    }
-
 }
