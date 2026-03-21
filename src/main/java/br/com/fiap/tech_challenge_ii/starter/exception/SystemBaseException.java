@@ -1,4 +1,4 @@
-package br.com.fiap.tech_challenge_ii.restaurant.core.exception;
+package br.com.fiap.tech_challenge_ii.starter.exception;
 
 import lombok.Getter;
 

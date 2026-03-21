@@ -1,5 +1,7 @@
 package br.com.fiap.tech_challenge_ii.restaurant.core.exception;
 
+import br.com.fiap.tech_challenge_ii.starter.exception.SystemBaseException;
+
 public class DomainException extends SystemBaseException {
     private static final String CODE = "restaurant.invalidRequest";
     private static final String MESSAGE = "Invalid request";

@@ -1,5 +1,7 @@
 package br.com.fiap.tech_challenge_ii.restaurant.core.exception;
 
+import br.com.fiap.tech_challenge_ii.starter.exception.SystemBaseException;
+
 public class UnauthorizedOperationException extends SystemBaseException {
 
     private static final String CODE = "restaurant.actionNotAllowed";
