@@ -22,7 +22,6 @@ services:
       dockerfile: Dockerfile
     container_name: tech-challenge-app
     environment:
-      SPRING_PROFILES_ACTIVE: prod
       DB_USERNAME: restaurant_user
       DB_PASSWORD: password
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/restaurant_db
