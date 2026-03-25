@@ -1,11 +1,11 @@
 INSERT INTO address (street, number, neighborhood, city, zip_code)
 VALUES ('Main St', '123', 'Downtown', 'São Paulo', '01000-000');
 
-INSERT INTO app_user (name, email, login, password, user_type, last_modified_date)
-VALUES ('Test Owner', 'owner@test.com', 'owner', 'password', 'OWNER', CURRENT_DATE);
+INSERT INTO app_user (name, email, user_type)
+VALUES ('Test Owner', 'owner@test.com', 'OWNER');
 
-INSERT INTO app_user (name, email, login, password, user_type, last_modified_date)
-VALUES ('Other Owner', 'other@test.com', 'other', 'password', 'OWNER', CURRENT_DATE);
+INSERT INTO app_user (name, email, user_type)
+VALUES ('Other Owner', 'other@test.com', 'OWNER');
 
 INSERT INTO restaurant
 (name, opening_hours, address_id, kitchen_type, owner_id)
