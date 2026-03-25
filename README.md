@@ -23,6 +23,7 @@ direction TB
      -Long id
      -String street
      -String number
+     -String neighborhood
      -String city
      -String zipCode
     }
@@ -39,7 +40,6 @@ direction TB
     }
 
     class Client {
-     -List~Order~ orders
     }
 
     class Owner {
@@ -51,12 +51,9 @@ direction TB
         -Address address
         -KitchenTypeEnum kitchenType
         -String openingHours
-        -Menu menu
+        -List~MenuItem~ menu
     }
 
-    class Menu{
-        -List~MenuItem~ itens
-    }
 
     class MenuItem {
     -Long id
@@ -72,8 +69,7 @@ direction TB
     User "1" --> "1" Address
     Owner "1" --> "1..*" Restaurant
     Restaurant "1" --> "1" Address
-    Restaurant --> Menu
-    Menu "1" --> "1..*" MenuItem
+    Restaurant --> "1..*" MenuItem
 ```
 
 #### Diagrama de entidades
@@ -97,6 +93,7 @@ erDiagram
         VARCHAR street
         VARCHAR number
         VARCHAR city
+        VARCHAR neighborhood
         VARCHAR zip_code
     }
 
@@ -107,11 +104,6 @@ erDiagram
         VARCHAR opening_hours
         BIGINT address_id FK
         BIGINT owner_id FK
-        BIGINT menu_id FK
-    }
-
-    MENU {
-        BIGINT id PK
     }
 
     MENU_ITEM {
@@ -121,28 +113,13 @@ erDiagram
         DECIMAL price
         BOOLEAN only_local_consumption
         VARCHAR photo_path
-        BIGINT menu_id FK
-    }
-
-    ORDER {
-        BIGINT id PK
-        
-    }
-
-    ORDER_ITEMS {
-        BIGINT id PK
-        BIGINT client_id FK
-        BIGINT order_id FK
-        BIGINT menu_item_id FK
+        BIGINT restaurant_id FK
     }
 
     USER ||--|| ADDRESS : has
     USER ||--o{ RESTAURANT : owns
     RESTAURANT ||--|| ADDRESS : located_at
-    RESTAURANT ||--|| MENU : has
-    MENU ||--o{ MENU_ITEM : contains
-    USER ||--|| ORDER : do
-    ORDER ||--o{ ORDER_ITEMS : contains
+    RESTAURANT ||--o{ MENU_ITEM : contains
 ```
 
 ## API – Endpoints

@@ -1,20 +1,14 @@
-package br.com.fiap.tech_challenge_ii.core.domain.entities.user;
+package br.com.fiap.tech_challenge_ii.user.core.domain;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
-import br.com.fiap.tech_challenge_ii.core.domain.entities.order.Order;
-import br.com.fiap.tech_challenge_ii.core.domain.valueObjects.Address;
 import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
+@SuperBuilder
 public class Client extends User {
 
-    private List<Order> orders;
-
-    public Client(Long id, String name, String email, String login, String password, LocalDateTime lastModifiedDate,
-            Address address) {
-        super(id, name, email, login, password, lastModifiedDate, address);
+    public Client(Long id, String name, String userType, String email) {
+        super(id, name, email, userType);
     }
 
 }

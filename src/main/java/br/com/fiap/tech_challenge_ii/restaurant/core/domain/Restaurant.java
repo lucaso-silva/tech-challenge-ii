@@ -1,22 +1,21 @@
 package br.com.fiap.tech_challenge_ii.restaurant.core.domain;
 
 import br.com.fiap.tech_challenge_ii.restaurant.core.domain.valueObjects.Address;
-import br.com.fiap.tech_challenge_ii.restaurant.core.domain.valueObjects.WeeklySchedule;
 import br.com.fiap.tech_challenge_ii.restaurant.core.exception.DomainException;
 import lombok.Getter;
 
 @Getter
 public class Restaurant {
 
-    private Long id;
+    private final Long id;
     private String name;
     private Address address;
     private KitchenType kitchenType;
-    private WeeklySchedule openingHours;
-    private Long ownerId; //TODO: check using of User
-    //private Long menuId; //TODO: check using of Menu
+    private String openingHours;
+    private Long ownerId;
 
-    private Restaurant(final String name, final Address address, final KitchenType kitchenType, WeeklySchedule openingHours, final Long ownerId) {
+    private Restaurant(final Long id, final String name, final Address address, final String kitchenType, String openingHours, final Long ownerId) {
+        this.id = id;
         renameTo(name);
         updateAddress(address);
         changeKitchenType(kitchenType);
@@ -24,13 +23,29 @@ public class Restaurant {
         changeOwner(ownerId);
     }
 
-    public static Restaurant newRestaurant(final String name,
+    public static Restaurant newRestaurant(final Long id,
+                                           final String name,
                                            final Address address,
-                                           final KitchenType kitchenType,
-                                           final WeeklySchedule openingHours,
+                                           final String kitchenType,
+                                           final String openingHours,
                                            final Long ownerId) {
 
-        return new Restaurant(name, address, kitchenType, openingHours, ownerId);
+        return new Restaurant(id, name, address, kitchenType, openingHours, ownerId);
+    }
+
+    public void update(String name, Address address, String kitchenType, String openingHours) {
+        if(name != null){
+            renameTo(name);
+        }
+        if(address != null){
+            updateAddress(address);
+        }
+        if(kitchenType != null){
+            changeKitchenType(kitchenType);
+        }
+        if(openingHours != null){
+            changeOpeningHours(openingHours);
+        }
     }
 
     private void renameTo(String newName) {
@@ -47,18 +62,18 @@ public class Restaurant {
         this.address = newAddress;
     }
 
-    private void changeKitchenType(KitchenType newKitchenType) {
-        if(newKitchenType == null)
+    private void changeKitchenType(String newKitchenType) {
+        if(newKitchenType == null || newKitchenType.isBlank())
             throw new DomainException("You need to inform the restaurant kitchen type!");
 
-        this.kitchenType = newKitchenType;
+        this.kitchenType = KitchenType.from(newKitchenType);
     }
 
-    private void changeOpeningHours(WeeklySchedule businessHours) {
-        if(businessHours == null)
+    private void changeOpeningHours(String newOpeningHours) {
+        if(newOpeningHours == null || newOpeningHours.isBlank())
             throw new DomainException("You need to inform the restaurant opening hours!");
 
-        this.openingHours = businessHours;
+        this.openingHours = newOpeningHours;
     }
 
     private void changeOwner(Long newOwnerId) {
