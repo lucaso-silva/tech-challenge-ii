@@ -59,6 +59,12 @@ public class MenuItemController {
         return ResponseEntity.created(uri).body(Map.of("ids", ids));
     }
 
+    @GetMapping
+    public ResponseEntity<List<MenuItemDTO>> getAllMenuItems() {
+        List<MenuItemDTO> menuItems = findMenuItemUseCase.findAll();
+        return ResponseEntity.ok(menuItems);
+    }
+
     @GetMapping("/{restaurantId}")
     public ResponseEntity<List<MenuItemDTO>> getMenuByRestaurant(
             @PathVariable Long restaurantId) {

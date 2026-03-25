@@ -59,4 +59,11 @@ public class MenuItemSpringDataGateway implements MenuItemGateway {
                 .map(menuItemMapper::toDomain);
     }
 
+    @Override
+    public List<MenuItem> findAll() {
+        return menuItemRepository.findAll().stream()
+                .map(menuItemMapper::toDomain)
+                .collect(Collectors.toList());
+    }
+
 }

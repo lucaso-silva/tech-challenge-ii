@@ -8,4 +8,6 @@ public interface FindMenuItemUseCase {
 
     List<MenuItemDTO> findByRestaurantId(Long restaurantId);
 
+    List<MenuItemDTO> findAll();
+
 }

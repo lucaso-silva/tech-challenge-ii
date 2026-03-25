@@ -30,4 +30,11 @@ public class FindMenuItemUseCaseImpl implements FindMenuItemUseCase {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<MenuItemDTO> findAll() {
+        return menuItemGateway.findAll().stream()
+                .map(item -> item.toDTO())
+                .collect(Collectors.toList());
+    }
+
 }
