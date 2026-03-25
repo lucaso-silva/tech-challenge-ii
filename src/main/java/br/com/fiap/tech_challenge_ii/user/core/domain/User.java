@@ -21,8 +21,12 @@ public abstract class User {
     }
 
     public void update(String name, String userType) {
-        this.name = name;
-        this.userType = userType;
+        if (name != null) {
+            this.name = name;
+        }
+        if (userType != null) {
+            this.userType = userType;
+        }
     }
 
 }
