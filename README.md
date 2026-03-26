@@ -1,5 +1,33 @@
 # Tech Challenge II
+## 📌Sobre este projeto
 
+Este repositório é um fork de um projeto desenvolvido em equipe como parte do Tech Challenge II da Pós-Graduação em Arquitetura e Desenvolvimento Java (FIAP).
+
+**Repositório original:**  
+https://github.com/HugoOliveiraSoares/tech-challenge-ii
+
+## Minhas contribuições
+
+Atuei principalmente no desenvolvimento do módulo de **Restaurant**, sendo responsável por:
+
+- Implementação completa do CRUD de restaurantes  
+- Desenvolvimento de endpoints REST (`POST`, `GET`, `PATCH`, `DELETE`)  
+- Modelagem de entidades e relacionamento com Address (JPA)  
+- Implementação de Use Cases seguindo os princípios de Clean Architecture  
+- Integração com camada de persistência (Spring Data JPA)  
+- Aplicação de validações de negócio e tratamento de exceções  
+- Escrita de testes unitários com Mockito  
+- Escrita de testes de integração com MockMvc
+
+## Trabalho em equipe
+
+Este projeto foi desenvolvido em colaboração com:
+
+- [Hugo Soares](https://github.com/HugoOliveiraSoares)
+- [Matheus Sousa](https://github.com/msousa-s)  
+
+Utilizando fluxo baseado em Git (feature branches, pull requests e code review).
+  
 ## Introdução
 
 Este projeto consiste no desenvolvimento de uma API backend para gestão de usuários, restaurantes e itens de cardápio em uma plataforma compartilhada entre restaurantes.
