@@ -59,10 +59,6 @@ direction TB
      -Long id
      -String name
      -String email
-     -String login
-     -String password
-     -LocalDate lastModifiedDate
-     -Address address
     }
 
     class Client {
@@ -107,11 +103,7 @@ erDiagram
         BIGINT id PK
         VARCHAR name
         VARCHAR email
-        VARCHAR login
-        VARCHAR password
         VARCHAR user_type
-        DATE last_modified_date
-        BIGINT address_id FK
     }
 
     ADDRESS {
@@ -181,6 +173,7 @@ erDiagram
 | Endpoint                                   | Método | Descrição                     |
 |--------------------------------------------|--------|-------------------------------|
 | /menu/{restaurantId}                       | POST   | Adicionar itens ao menu       |
+| /menu/                                     | GET    | Obter todos os menus          |
 | /menu/{restaurantId}                       | GET    | Obter menu do restaurante     |
 | /menu/{restaurantId}/{menuItemId}          | PUT    | Atualizar item do menu        |
 | /menu/{restaurantId}/{menuItemId}          | DELETE | Excluir item do menu          |
