@@ -16,7 +16,7 @@ public class Restaurant {
     }
 
     public boolean isOwnedBy(Long userId) {
-        return this.ownerId == userId;
+        return this.ownerId.equals(userId);
     }
 
     private void setId(Long id) {
