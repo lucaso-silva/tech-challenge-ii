@@ -34,6 +34,12 @@ Este projeto consiste no desenvolvimento de uma API backend para gestão de usu�
 
 O sistema foi desenvolvido como parte do Tech Challenge – Fase 2 do programa de Pós-Graduação em Arquitetura e Desenvolvimento Java (FIAP), com foco na aplicação prática dos conceitos estudados ao longo do curso.
 
+## API Demo
+
+<p align="center">
+  <img src="docs/api-demo.gif" alt="API Demo" width="800"/>
+</p>
+
 ### Objetivo do projeto
 
 - Desenvolver uma API REST para gerenciamento de usuários, restaurantes e itens de cardápio  
